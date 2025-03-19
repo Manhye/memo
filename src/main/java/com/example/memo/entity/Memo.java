@@ -1,5 +1,6 @@
 package com.example.memo.entity;
 
+import com.example.memo.dto.MemoRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -10,8 +11,12 @@ public class Memo {
     private String title;
     private String contents;
 
-    public void update(String title, String contents){
-        this.title = title;
-        this.contents = contents;
+    public void update(MemoRequestDto requestDto){
+        this.title = requestDto.getTitle();
+        this.contents = requestDto.getContents();
+    }
+
+    public void updateTitle(MemoRequestDto requestDto){
+        this.title = requestDto.getTitle();
     }
 }
